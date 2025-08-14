@@ -17,8 +17,9 @@
 <body>
 <!-- NAVBAR -->
 <div class="container-fluid sticky-top py-2" style="height: 520px;">
-<nav class="navbar1 rounded-5 d-flex align-items-center justify-content-center" style=" background-image:Url('images/background/qjfsii1v.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
+<nav class="navbar1 rounded-5 d-flex align-items-center justify-content-center" style=" background-image:Url('../images/background/qjfsii1v.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
 <a onclick="history.back()" class="shadow-sm rounded-5 back-btn"><i class="fa fa-chevron-left"></i></a>
+<a class="shadow-sm rounded-5 toggle-btn" id="toggler" onclick="darkmode()"><i class="fa fa-moon"></i></a>
 <h1 class="text-center">About Us</h1>
     </nav>
 </div>
@@ -77,7 +78,7 @@ Our mission is to empower athletes and fitness enthusiasts by offering high-qual
         Expert Advice: Our knowledgeable staff is here to help you find the perfect gear tailored to your specific needs.
       </p>
       <p>
-        Quality Assurance: We partner with trusted brands to ensure you receive the highest quality products.
+        Quality Assurance: We partner with trusted brands to ensure you receive the highest quality product.
       </p>
       <p>
         Competitive Pricing: Enjoy great deals and promotions on top brands without compromising on quality.
@@ -110,48 +111,7 @@ Our mission is to empower athletes and fitness enthusiasts by offering high-qual
 <!-- CONTENT -->
 
 <!-- FOOTER -->
-<div class="container-fluid text-light" style="background-color:#303032;">
-  <!--  -->
-  <div class="container-fluid d-block d-md-flex d-lg-flex align-items-center justify-content-center p-0">
-  <!--  -->
-  <div class="w-100 pt-4 pt-lg-0 mt-3 ">
-  <h3 class="text-center text-lg-start"><span class="un">Y</span><span class="duo">a</span><span class="tres">g</span><span class="quart">a</span> <span class="cing">K</span><span class="six">i</span><span class="sept">t</span><span class="eight">s</span></h3>
-  <p>
-  The world's first and largest digital marketplace for high esteemed products. Buy and discover exclusive items and collections.
-  </p>
-  </div>
-  <!--  -->
-  <div class="w-100 w-lg-50">
-  <h3 class="text-center">Contact Us</h3>
-  <div class="social-bar bg-warnin">
-  <a class="social btn fs-4 rounded-5" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a class="social btn fs-4 rounded-5" href="#"><i class="fa fa-instagram"></i></a>
-  <a class="btn social fs-4 rounded-5" href="#"><i class="fa fa-twitter"></i></a>
-  <a class="btn social fs-4 rounded-5" href="#"><i class="fa fa-whatsapp"></i></a>
-  <a href="mailto:bellosheuahmad@gmail.com" class="btn social fs-4 rounded-5"><i class="fa fa-envelope"></i></a>
-
-  </div>
-  </div>
-  </div>
-  <hr style="color: white;">
-  <div class="container-fluid d-inline d-md-flex d-lg-flex align-items-center justify-content-center">
-
-
-  <div class="container-fluid d-inline d-md-flex d-lg-flex text-light text-center">
-
-  <h6 class="me-auto p-2"><small>&copy; 2024, Yagakits.com, Inc.</small></h6>
-
-  <h6 class="p-2">
-  <a href="#" style="text-decoration: none; color: #c3c6c9; font-size: small;">Terms of Service</a>
-  </h6>
-  <div class="vr mb-2 d-none d-md-flex d-lg-flex"></div>
-  <h6 class="p-2">
-  <a href="#" style="text-decoration: none; color: #c3c6c9; font-size: small;">Privacy Policy</a>
-  </h6>
-
-  </div>
-  </div>
-</div>
+<div id="footer-placeholder"></div>
 <!-- FOOTER -->
   
 <!-- SROLL TOP -->
@@ -160,28 +120,28 @@ Our mission is to empower athletes and fitness enthusiasts by offering high-qual
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
   <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
-  <script src="index.js"></script>
+  <script src="about.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/61e146bea4.js"></script>
 
   </body>
 </html>
 <script>
-  let contentName = document.getElementById("contentname");
-  let content_Name = document.getElementById("content_name");
+  let contName = document.getElementById("toggler");
+  // let content_Name = document.getElementById("content_name");
   function darkmode(){
   document.body.classList.toggle("dark-mode");
   var theme;
   if(document.body.classList.contains("dark-mode")){
   console.log("Dark mode");
   theme = "DARK";
-  contentName.innerHTML= "<i class='fa fa-sun'></i>";
-  content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
+  contName.innerHTML= "<i class='fa fa-sun'></i>";
+  // content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
   }else{
   console.log("Light mode");
   theme = "LIGHT";
-  contentName.innerHTML= "<i class='fa fa-moon'></i>";
-  content_Name.innerHTML= "<i class='fa fa-moon fs-2'></i> Theme";
+  contName.innerHTML= "<i class='fa fa-moon'></i>";
+  // content_Name.innerHTML= "<i class='fa fa-moon fs-2'></i> Theme";
   }
   localStorage.setItem("PageTheme", JSON.stringify(theme));
   }
@@ -189,7 +149,7 @@ Our mission is to empower athletes and fitness enthusiasts by offering high-qual
   console.log(GetTheme);
   if(GetTheme === "DARK"){
   document.body.classList = "dark-mode";
-  contentName.innerHTML= "<i class='fa fa-sun'></i>";
-  content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
+  contName.innerHTML= "<i class='fa fa-sun'></i>";
+  // content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
   }
 </script>
