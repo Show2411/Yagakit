@@ -1,0 +1,90 @@
+<!-- <link rel="stylesheet" href="style.css"> -->
+  
+    <!-- NAVBAR -->
+      <nav class="navbar rounded-5">
+      <div class="container-fluid bg-">
+      <a class="navbar-brand me-auto fw-bolder fs-4 mx-3" id="ring" href="index.html" data-animation-role="header-element">
+        <span class="un">Y</span><span class="duo">a</span><span class="tres">g</span><span class="quart">a</span> <span class="cing">K</span><span class="six">i</span><span class="sept">t</span><span class="eight">s</span>
+      </a>
+      <span class="nav-item d-none d-lg-flex fw-bold mx-3">
+      <a class="nav-link px-3 py-1 rounded-4 shadow-sm" href="index.html" role="button" data-animation-role="header-element" data-bs-toggle="" id="UI" aria-expanded="false" >Home</a>
+      </span>
+    
+      <span class="nav-item d-none d-lg-flex fw-bold mx-3">
+      <a class="nav-link  px-3 py-1 rounded-4 shadow-sm" href="store.html" role="button" data-animation-role="header-element" data-bs-toggle="" id="UI" aria-expanded="false" >Store</a>
+      </span>
+    
+    
+      <span class="nav-item d-none d-lg-flex fw-bold mx-3">
+      <a class="nav-link px-3 py-1 rounded-4 shadow-sm" href="about.html" id="UI" data-animation-role="header-element">About Us</a>
+      </span>
+    
+      <form class="d-flex d-none d-md-flex d-lg-flex rounded-5 shadow-sm bg-light input-group w-25 mx-3 mb-0" role="search">
+        <input class="form-control text-truncate rounded-5" type="text" id="search-item" onkeyup="search()" style="border: none;" placeholder="What are you looking for?" aria-label="Search" required>
+        <button class="btn" type="button" name="done"><i class="fa fa-search"></i></button>
+      </form>
+    
+      <span class="nav-item d-lg-none d-md-none d-flex mx-2" style="margin-left: 30px;">            
+      <button type="button" class="btn openbtn fs-5"  id="ring" onclick="openNav()"><i class="fa fa-search"></i></button>
+      </span>
+    
+      <span class="nav-item d-lg-none d-flex mx-2" style="margin-left: 30px;">            
+      <button type="button" class="btn openside fs-5"  id="sidebarBtn" onclick="openSide()"><i class="fa fa-bars"></i></button>
+      </span>
+    
+               
+      <span class="nav-item d-none d-lg-flex mx-3">
+        <a class="nav-link fs-5" id="contentname" onclick="darkmode()"><i class="fa fa-moon"></i></a>
+      </span>
+     
+      <!--DROPDOWN SEARCHBAR  -->
+    <div id="myNav" class="overlay w-100 d-lg-none d-md-none d-flex border-2">
+    <form class="input-group shadow-sm rounded-5 border-0 m-2" role="search" style="background: var(--secondary-color);">
+    <input class="form-control rounded-5 border-0" type="text" id="searchit" onkeyup="searchitem()" placeholder="What are you looking for?" aria-label="Search" required>
+    <button class="btn" type="button" name="done"><i class="fa fa-search" style="color:var(--primary-color);"></i></button>
+    </form>
+    </div>
+    <!-- DROPDOWN SEARCHBAR  -->
+    </div>
+    </nav>
+    <!-- NAVBAR -->
+    
+    
+    <!-- SIDEBAR -->
+    <div id="mySidebar" class="sidebar d-lg-none">
+      <h1 class="title">Yaga Kits</h1>
+      <a href="index.html" id="UD">Home</a>
+      <a href="store.html" id="UD">Store</a>
+      <a href="about.html" id="UD">About</a>
+      <div ><a id="content_name" onclick="darkmode()"><i class="fa fa-moon fs-2"></i> Theme</a></div>
+    </div>
+    <!-- SIDEBAR -->
+<script>
+    
+let contentName = document.getElementById("contentname");
+  let content_Name = document.getElementById("content_name");
+  function darkmode(){
+  document.body.classList.toggle("dark-mode");
+  var theme;
+  if(document.body.classList.contains("dark-mode")){
+  console.log("Dark mode");
+  theme = "DARK";
+  contentName.innerHTML= "<i class='fa fa-sun'></i>";
+  content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
+  }else{
+  console.log("Light mode");
+  theme = "LIGHT";
+  contentName.innerHTML= "<i class='fa fa-moon'></i>";
+  content_Name.innerHTML= "<i class='fa fa-moon fs-2'></i> Theme";
+  }
+  localStorage.setItem("PageTheme", JSON.stringify(theme));
+  }
+  let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+  console.log(GetTheme);
+  if(GetTheme === "DARK"){
+  document.body.classList = "dark-mode";
+  contentName.innerHTML= "<i class='fa fa-sun'></i>";
+  content_Name.innerHTML= "<i class='fa fa-sun fs-2'></i> Theme";
+  }
+</script>
+<script src="style.js"></script>
