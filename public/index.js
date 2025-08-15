@@ -25,7 +25,7 @@ const pic = document.querySelectorAll('[alt]');
     pic.src = retrievedArray[0];
     bello.innerHTML = retrievedArray[1];
     function buy() {
-        let number = "2348130593344";
+        let number = "2349028784886";
         let picture = retrievedArray[0];
         let pro_name = retrievedArray[1];
         let message = "Hi Yagakits, I'd love to get this from here."
@@ -37,4 +37,5 @@ const pic = document.querySelectorAll('[alt]');
         window.open(URL, '_blank').focus();
     }
     }
+
     
