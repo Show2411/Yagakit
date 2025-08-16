@@ -51,28 +51,3 @@ return Math.floor(Math.random() * (max - min + 1) + min);
 const rand = randomrev(5, 18);
 document.getElementById("review").innerHTML = "(" +rand+ " customers review)";
 
-
-const pname = document.querySelectorAll(".mean");
-const pprice = document.querySelectorAll(".price");
-const ppic = document.querySelectorAll('[alt]');
-const cart = document.querySelectorAll(".buy");    
-for(let i = 0; i < cart.length; i++) {
-cart[i].addEventListener("click", () => {
-console.log(cart[i]);
-let mobile = "2349028784886";
-let name = pname[i].innerHTML;
-const p_pic = ppic[i].src;
-let img = encodeURIComponent(p_pic);
-let p_price = pprice[i].innerHTML;
-let message_body = "Hi Yagakits, I'd love to get this from here."
-
-var U_RL = "https://wa.me/" + mobile + "?text="
-+img+ "%0a"
-+name+ "%0a"
-+p_price+ "%0a"
-+message_body+ "%0a%0a";
-window.open(U_RL, '_blank').focus();
-
-})
-}
-
